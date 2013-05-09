@@ -1,4 +1,7 @@
 #!/bin/sh
 
-fakeroot find ./xbian-package-firmware  -type f | grep -v DEBIAN/ | xargs md5sum > ./xbian-package-firmware/DEBIAN/md5sums 
-fakeroot dpkg-deb -b ./xbian-package-firmware xbian-package-firmware-1.4.deb
+package=$(cat ./content/DEBIAN/control | grep Package | awk '{print $2}')
+version=$(cat ./content/DEBIAN/control | grep Version | awk '{print $2}')
+
+fakeroot find ./content  | grep -v DEBIAN/ | xargs md5sum > ./content/DEBIAN/md5sums 
+fakeroot dpkg-deb -b ./content "${package}"-"${version}".deb
