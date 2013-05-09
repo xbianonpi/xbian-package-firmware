@@ -1,0 +1,129 @@
+#!/bin/bash
+
+if [ $1 == "install" -o $1 == "upgrade" ]; then
+
+	if [ -f "/boot/bootcode.bin" ]; then
+		mv /boot/bootcode.bin /boot/bootcode.bin.xbian
+	fi
+
+	if [ -f "/boot/fixup.dat" ]; then
+		mv /boot/fixup.dat /boot/fixup.dat.xbian
+	fi
+
+	if [ -f "/boot/start.elf" ]; then
+		mv /boot/start.elf /boot/start.elf.xbian
+	fi
+
+	if [ ! -d "/boot" ]; then
+		mkdir -p "/boot";
+	fi
+
+	if [ ! -d "/opt/vc" ]; then
+		mkdir -p "/opt/vc";
+	fi
+
+	if [ ! -d "/opt/vc/lib" ]; then
+		mkdir -p "/opt/vc/lib";
+	fi
+
+	if [ ! -d "/opt/vc/include/GLES2" ]; then
+		mkdir -p "/opt/vc/include/GLES2";
+	fi
+
+	if [ ! -d "/opt/vc/include/vcinclude" ]; then
+		mkdir -p "/opt/vc/include/vcinclude";
+	fi
+
+	if [ ! -d "/opt/vc/include" ]; then
+		mkdir -p "/opt/vc/include";
+	fi
+
+	if [ ! -d "/opt/vc/include/WF" ]; then
+		mkdir -p "/opt/vc/include/WF";
+	fi
+
+	if [ ! -d "/opt/vc/include/IL" ]; then
+		mkdir -p "/opt/vc/include/IL";
+	fi
+
+	if [ ! -d "/opt/vc/include/GLES" ]; then
+		mkdir -p "/opt/vc/include/GLES";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vcos" ]; then
+		mkdir -p "/opt/vc/include/interface/vcos";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vcos/pthreads" ]; then
+		mkdir -p "/opt/vc/include/interface/vcos/pthreads";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vcos/generic" ]; then
+		mkdir -p "/opt/vc/include/interface/vcos/generic";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vchi/connections" ]; then
+		mkdir -p "/opt/vc/include/interface/vchi/connections";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vchi" ]; then
+		mkdir -p "/opt/vc/include/interface/vchi";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vchi/message_drivers" ]; then
+		mkdir -p "/opt/vc/include/interface/vchi/message_drivers";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vchi/common" ]; then
+		mkdir -p "/opt/vc/include/interface/vchi/common";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vmcs_host/vchi_local" ]; then
+		mkdir -p "/opt/vc/include/interface/vmcs_host/vchi_local";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vmcs_host" ]; then
+		mkdir -p "/opt/vc/include/interface/vmcs_host";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vmcs_host/linux/vcfiled" ]; then
+		mkdir -p "/opt/vc/include/interface/vmcs_host/linux/vcfiled";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vmcs_host/linux" ]; then
+		mkdir -p "/opt/vc/include/interface/vmcs_host/linux";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vmcs_host/khronos/IL" ]; then
+		mkdir -p "/opt/vc/include/interface/vmcs_host/khronos/IL";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vchiq_arm" ]; then
+		mkdir -p "/opt/vc/include/interface/vchiq_arm";
+	fi
+
+	if [ ! -d "/opt/vc/include/interface/vctypes" ]; then
+		mkdir -p "/opt/vc/include/interface/vctypes";
+	fi
+
+	if [ ! -d "/opt/vc/include/VG" ]; then
+		mkdir -p "/opt/vc/include/VG";
+	fi
+
+	if [ ! -d "/opt/vc/include/EGL" ]; then
+		mkdir -p "/opt/vc/include/EGL";
+	fi
+
+	if [ ! -d "/opt/vc/include/KHR" ]; then
+		mkdir -p "/opt/vc/include/KHR";
+	fi
+
+	if [ ! -d "/opt/vc/sbin" ]; then
+		mkdir -p "/opt/vc/sbin";
+	fi
+
+	if [ ! -d "/opt/vc/bin" ]; then
+		mkdir -p "/opt/vc/bin";
+	fi
+
+fi

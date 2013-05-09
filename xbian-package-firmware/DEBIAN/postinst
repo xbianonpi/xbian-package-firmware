@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $1 == "configure" ]; then
+
+	if [ -f "/boot/bootcode.bin.xbian" ]; then
+		rm /boot/bootcode.bin.xbian
+	fi
+
+	if [ -f "/boot/fixup.dat.xbian" ]; then
+		rm /boot/fixup.dat.xbian
+	fi
+
+	if [ -f "/boot/start.elf.xbian" ]; then
+		rm /boot/start.elf.xbian
+	fi
+
+	if [ ! -L /usr/lib/vfp ]; then
+		ln -s /opt/vc/lib /usr/lib/vfp
+	fi
+
+	ldconfig &>/dev/null
+
+fi

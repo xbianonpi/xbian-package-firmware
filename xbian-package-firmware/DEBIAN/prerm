@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $1 == "remove" ]; then
+
+	if [ -f "/boot/bootcode.bin" ]; then
+		rm /boot/bootcode.bin
+	fi
+
+	if [ -f "/boot/fixup.dat" ]; then
+		rm /boot/fixup.dat
+	fi
+
+	if [ -f "/boot/start.elf" ]; then
+		rm /boot/start.elf
+	fi
+
+	if [ -d "/opt/vc" ]; then
+		rm -r /opt/vc
+	fi
+
+fi
