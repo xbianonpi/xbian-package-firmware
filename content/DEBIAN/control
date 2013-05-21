@@ -9,4 +9,3 @@ Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspb
 Conflicts: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
 Maintainer: Koenkk <development@xbian.org>
 Description: Firmware for XBian.
-Installed-Size: 8388
