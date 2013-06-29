@@ -1,6 +1,6 @@
 Origin: XBian
 Package: xbian-package-firmware
-Version: 1.5
+Version: 1.5-1
 Section: firmware
 Essential: Yes
 Priority: optional
