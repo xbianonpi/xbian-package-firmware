@@ -5,6 +5,7 @@ Section: firmware
 Essential: Yes
 Priority: optional
 Architecture: armhf
+Pre-Depends: xbian-package-initramfs-tools (>=1.0-0.4)
 Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
 Conflicts: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
 Depends: xbian-update (>=1.0-1), xbian-package-kernel (>=1.2)
