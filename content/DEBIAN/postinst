@@ -20,6 +20,6 @@ if [ $1 == "configure" ]; then
 
 	ldconfig &>/dev/null
 
-	mountpoint -q /boot && umount /boot
+	mountpoint -q /boot && umount /boot || true
 
 fi
