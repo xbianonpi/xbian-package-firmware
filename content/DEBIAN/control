@@ -1,11 +1,12 @@
 Origin: XBian
 Package: xbian-package-firmware
-Version: 1.4-1
+Version: 1.4-2
 Section: firmware
 Essential: Yes
 Priority: optional
 Architecture: armhf
 Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
 Conflicts: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
+Breaks: xbian-package-kernel (<<1.3-4)
 Maintainer: Koenkk <development@xbian.org>
 Description: Firmware for XBian.
