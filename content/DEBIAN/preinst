@@ -1,8 +1,9 @@
 #!/bin/bash
 
+mountpoint -q /boot || mount /boot
+
 if [ $1 == "install" -o $1 == "upgrade" ]; then
 
-	mountpoint -q /boot || mount /boot
 
 	if [ -f "/boot/bootcode.bin" ]; then
 		mv /boot/bootcode.bin /boot/bootcode.bin.xbian
