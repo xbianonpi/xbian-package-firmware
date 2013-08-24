@@ -1,6 +1,6 @@
 Origin: XBian
 Package: xbian-package-firmware
-Version: 1.4-3
+Version: 1.4-4
 Section: firmware
 Essential: Yes
 Priority: optional
@@ -9,4 +9,4 @@ Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspb
 Conflicts: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev
 Breaks: xbian-package-kernel (<<1.3-4.2)
 Maintainer: Koenkk <development@xbian.org>
-Description: Firmware for XBian.(Aug  7 2013 16:19:51, version 7c7b17433e2a63025f6f42adcb2b8766eff55e12)
+Description: Firmware for XBian.(Aug 21 2013 12:52:10, bf5ae9ff9c214727f6c9f1d381be35632678b98b)
