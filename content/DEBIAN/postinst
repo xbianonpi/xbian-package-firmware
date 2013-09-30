@@ -21,3 +21,5 @@ if [ $1 == "configure" ]; then
 	ldconfig &>/dev/null
 
 fi
+
+touch /var/run/reboot-required || :
