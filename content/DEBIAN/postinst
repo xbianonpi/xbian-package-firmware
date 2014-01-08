@@ -14,9 +14,7 @@ if [ $1 == "configure" ]; then
 		rm /boot/start.elf.xbian
 	fi
 
-	if [ ! -L /usr/lib/vfp ]; then
-		ln -s /opt/vc/lib /usr/lib/vfp
-	fi
+	[ -e /usr/lib/vfp ] && rm -f /usr/lib/vfp
 
 	ldconfig &>/dev/null
 
