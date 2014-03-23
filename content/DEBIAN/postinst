@@ -20,4 +20,6 @@ if [ $1 == "configure" ]; then
 
 fi
 
-touch /var/run/reboot-required || :
+grep -q ^emmc_pll_core /boot/config.txt || echo "emmc_pll_core=0" >> /boot/config.txt
+
+echo "xbian-package-firmware" >>  /var/run/reboot-required || :
