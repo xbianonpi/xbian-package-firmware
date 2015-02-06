@@ -1,25 +1,25 @@
 #!/bin/bash
 
+if [ $1 == "configure" -a -d /boot.new ]; then
+	cp -a /boot.new/* -t /boot && rm -fr /boot.new
+fi
+
+#detect chroot
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+  exit 0
+fi
+
 if [ $1 == "configure" ]; then
-
-	if [ -f "/boot/bootcode.bin.xbian" ]; then
-		rm /boot/bootcode.bin.xbian
-	fi
-
-	if [ -f "/boot/fixup.dat.xbian" ]; then
-		rm /boot/fixup.dat.xbian
-	fi
-
-	if [ -f "/boot/start.elf.xbian" ]; then
-		rm /boot/start.elf.xbian
-	fi
 
 	[ -e /usr/lib/vfp ] && rm -f /usr/lib/vfp
 
 	ldconfig &>/dev/null
+	
+	for f in COPYING.linux  LICENCE.broadcom; do cp /var/tmp/$f /boot; done
 
 fi
 
-grep -q ^emmc_pll_core /boot/config.txt || echo "emmc_pll_core=0" >> /boot/config.txt
+#grep -q ^emmc_pll_core /boot/config.txt || echo "emmc_pll_core=0" >> /boot/config.txt
+sed -i '/emmc_pll_core/d' /boot/config.txt
 
 echo "xbian-package-firmware" >>  /var/run/reboot-required || :

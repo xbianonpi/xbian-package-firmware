@@ -1,11 +1,12 @@
 Origin: XBian
 Package: xbian-package-firmware
-Version: 1.4.14-0
+Version: 2.0.3
 Section: firmware
 Essential: Yes
 Priority: optional
 Architecture: armhf
+Provides: libraspberrypi0, libegl1-mesa, libegl1-mesa-dev, libegl1-mesa-drivers, libgles2-mesa-dev, libgles2-mesa
 Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
-Conflicts: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev
-Maintainer: Koenkk <development@xbian.org>
-Description: Firmware for XBian. (Mar 19 2014 23:26:47 Copyright (c) 2012 Broadcom version 98eb97cd0061f2fcff808fe5f32f851d5eada1ee (tainted) (release))
+Conflicts: libraspberrypi0, raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-package-firmware-6q, libegl1-mesa, libegl1-mesa-dev, libegl1-mesa-drivers, libgles2-mesa-dev, libgles2-mesa
+Maintainer: mk01 <development@xbian.org>
+Description: RPI firmware (RPI2 compatible)

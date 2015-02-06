@@ -1,20 +1,14 @@
 #!/bin/bash
 
+#detect chroot
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+  exit 0
+fi
+
 { mountpoint -q /boot && [ "$(findmnt -o source -n /boot)" = '/dev/mmcblk0p1' ]; } || { umount /boot >/dev/null 2>&1; mount -t vfat /dev/mmcblk0p1 /boot || { echo "CAN'T MOUNT BOOT"; exit 1; }; }
 
 if [ $1 == "install" -o $1 == "upgrade" ]; then
 
-
-	if [ -f "/boot/bootcode.bin" ]; then
-		mv /boot/bootcode.bin /boot/bootcode.bin.xbian
-	fi
-
-	if [ -f "/boot/fixup.dat" ]; then
-		mv /boot/fixup.dat /boot/fixup.dat.xbian
-	fi
-
-	if [ -f "/boot/start.elf" ]; then
-		mv /boot/start.elf /boot/start.elf.xbian
-	fi
+    :
 
 fi
