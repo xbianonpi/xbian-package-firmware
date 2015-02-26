@@ -125,15 +125,12 @@ enum {
    MMAL_PARAMETER_SW_SATURATION_DISABLE,     /**< Takes a @ref MMAL_PARAMETER_BOOLEAN_T */
    MMAL_PARAMETER_SHUTTER_SPEED,             /**< Takes a @ref MMAL_PARAMETER_UINT32_T */
    MMAL_PARAMETER_CUSTOM_AWB_GAINS,          /**< Takes a @ref MMAL_PARAMETER_AWB_GAINS_T */
-<<<<<<< Updated upstream
-=======
    MMAL_PARAMETER_CAMERA_SETTINGS,           /**< Takes a @ref MMAL_PARAMETER_CAMERA_SETTINGS_T */
    MMAL_PARAMETER_PRIVACY_INDICATOR,         /**< Takes a @ref MMAL_PARAMETER_PRIVACY_INDICATOR_T */
    MMAL_PARAMETER_VIDEO_DENOISE,             /**< Takes a @ref MMAL_PARAMETER_BOOLEAN_T */
    MMAL_PARAMETER_STILLS_DENOISE,            /**< Takes a @ref MMAL_PARAMETER_BOOLEAN_T */
    MMAL_PARAMETER_ANNOTATE,                  /**< Takes a @ref MMAL_PARAMETER_CAMERA_ANNOTATE_T */
    MMAL_PARAMETER_STEREOSCOPIC_MODE,         /**< Takes a @ref MMAL_PARAMETER_STEREOSCOPIC_MODE_T */
->>>>>>> Stashed changes
 };
 
 /** Thumbnail configuration parameter type */
@@ -676,8 +673,6 @@ typedef struct MMAL_PARAMETER_AWB_GAINS_T
    MMAL_RATIONAL_T b_gain;                   /**< Blue gain */
 } MMAL_PARAMETER_AWB_GAINS_T;
 
-<<<<<<< Updated upstream
-=======
 typedef struct MMAL_PARAMETER_CAMERA_SETTINGS_T
 {
    MMAL_PARAMETER_HEADER_T hdr;
@@ -757,5 +752,4 @@ typedef struct MMAL_PARAMETER_STEREOSCOPIC_MODE_T
    MMAL_BOOL_T swap_eyes;
 } MMAL_PARAMETER_STEREOSCOPIC_MODE_T;
 
->>>>>>> Stashed changes
 #endif  /* MMAL_PARAMETERS_CAMERA_H */

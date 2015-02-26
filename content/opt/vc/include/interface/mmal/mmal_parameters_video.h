@@ -96,11 +96,8 @@ enum {
    MMAL_PARAMETER_VIDEO_ENCODE_INLINE_HEADER,            /**< Take a @ref MMAL_PARAMETER_BOOLEAN_T. */
    MMAL_PARAMETER_VIDEO_ENCODE_SEI_ENABLE,               /**< Take a @ref MMAL_PARAMETER_BOOLEAN_T. */
    MMAL_PARAMETER_VIDEO_ENCODE_INLINE_VECTORS,           /**< Take a @ref MMAL_PARAMETER_BOOLEAN_T. */
-<<<<<<< Updated upstream
-=======
    MMAL_PARAMETER_VIDEO_RENDER_STATS,           /**< Take a @ref MMAL_PARAMETER_VIDEO_RENDER_STATS_T. */
    MMAL_PARAMETER_VIDEO_INTERLACE_TYPE,           /**< Take a @ref MMAL_PARAMETER_VIDEO_INTERLACE_TYPE_T. */
->>>>>>> Stashed changes
 };
 
 /** Display transformations.

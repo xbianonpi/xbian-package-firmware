@@ -2344,8 +2344,6 @@ typedef struct OMX_CONFIG_CUSTOMAWBGAINSTYPE {
    OMX_U32 xGainB;                     /**< Blue gain - 16p16 */
 } OMX_CONFIG_CUSTOMAWBGAINSTYPE;
 
-<<<<<<< Updated upstream
-=======
 /* OMX_IndexConfigBrcmRenderStats: Query port statistics */
 typedef struct OMX_CONFIG_BRCMRENDERSTATSTYPE {
    OMX_U32 nSize;
@@ -2394,6 +2392,5 @@ typedef struct OMX_CONFIG_BRCMSTEREOSCOPICMODETYPE {
    OMX_BOOL bSwapEyes;                    /**< False = left eye first. True = right eye first. */
 } OMX_CONFIG_BRCMSTEREOSCOPICMODETYPE;
 
->>>>>>> Stashed changes
 #endif
 /* File EOF */
