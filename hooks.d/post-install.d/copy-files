@@ -1,0 +1,29 @@
+
+case $config_platform_branch in
+    rpi*)
+        # Copy for /boot   
+        [ -e ../content-tpl/boot.new/ ] && rm -rf ../content-tpl/boot.new/
+        mkdir ../content-tpl/boot.new/  
+        cp -a ./boot/bootcode.bin ../content-tpl/boot.new/
+        cp -a ./boot/COPYING.linux ../content-tpl/boot.new/  
+        cp -a ./boot/fixup_x.dat ../content-tpl/boot.new/fixup.dat
+        cp -a ./boot/LICENCE.broadcom ../content-tpl/boot.new/
+        cp -a ./boot/start_x.elf ../content-tpl/boot.new/start.elf
+        mkdir ../content-tpl/boot.new/overlays
+        cp -a ./boot/overlays/README ../content-tpl/boot.new/overlays/
+
+        # Copy for /var/tmp
+        [ -e ../content-tpl/var/ ] && rm -rf ../content-tpl/var/
+        mkdir -p ../content-tpl/var/tmp/
+        cp -a ./boot/COPYING.linux ../content-tpl/var/tmp/
+        cp -a ./boot/LICENCE.broadcom ../content-tpl/var/tmp/
+
+        # Copy for /opt/vc
+        [ -e ../content-tpl/opt/ ] && rm -rf ../content-tpl/opt/
+        mkdir -p ../content-tpl/opt/
+        cp -a ./hardfp/opt/vc/ ../content-tpl/opt/
+        [ -e "../content-tpl/opt/vc/src" ] && rm -rf ../content-tpl/opt/vc/src
+        ;;
+    *)
+        ;;
+esac

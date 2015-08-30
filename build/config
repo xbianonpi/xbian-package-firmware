@@ -1,0 +1,13 @@
+config_source_configure=true
+config_source_type=git
+config_source_keep=yes
+config_source_reset=yes
+config_source_refresh=yes
+config_source_prepare=true
+config_source_branch=master
+config_build_env=echo > /dev/null 
+config_build_make=true
+config_build_targets=
+config_install_targets=
+config_deb_contentclean=yes
+config_wrapper=build.package
