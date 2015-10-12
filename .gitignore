@@ -6,6 +6,5 @@ build.*
 *.deb
 ._*
 src_repo_hash_HEAD
-config_pkgver
 config_aptdir
-build/rpi/content-tpl
+build/rpi/content-tpl/*
