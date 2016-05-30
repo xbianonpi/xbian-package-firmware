@@ -5,7 +5,7 @@ if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
   exit 0
 fi
 
-{ mountpoint -q /boot && [ "$(findmnt -o source -n /boot)" = '/dev/mmcblk0p1' ]; } || { umount /boot >/dev/null 2>&1; mount -t vfat /dev/mmcblk0p1 /boot || { echo "CAN'T MOUNT BOOT"; exit 1; }; }
+mountpoint -q /boot || { mount /boot || { echo "CAN'T MOUNT BOOT"; exit 1; }; }
 
 if [ $1 == "install" -o $1 == "upgrade" ]; then
 
