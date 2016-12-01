@@ -1,2 +1,4 @@
 rpi stable rpi-jessie
 rpi2 stable rpi2-jessie
+
+rpi2-next devel rpi2-jessie
