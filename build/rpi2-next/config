@@ -1,0 +1,4 @@
+config_source_type_extra=--single-branch --depth=1
+config_source_addr=git://github.com/raspberrypi/firmware.git
+config_deb_pkgname=xbian-package-firmware
+config_source_branch=next
