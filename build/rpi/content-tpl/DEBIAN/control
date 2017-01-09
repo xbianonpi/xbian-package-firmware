@@ -5,7 +5,7 @@ Section: firmware
 Essential: Yes
 Priority: optional
 Architecture: armhf
-Provides: libraspberrypi0, libegl1-mesa, libegl1-mesa-dev, libegl1-mesa-drivers, libgles2-mesa-dev, libgles2-mesa
+Provides: libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, libegl1-mesa, libegl1-mesa-dev, libegl1-mesa-drivers, libgles2-mesa-dev, libgles2-mesa
 Replaces: raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-update (<=1.0-0.4)
 Conflicts: libraspberrypi0, raspberrypi-artwork, raspberrypi-bootloader, libraspberrypi0, libraspberrypi-bin, libraspberrypi-dev, xbian-package-firmware-6q, libegl1-mesa, libegl1-mesa-dev, libegl1-mesa-drivers, libgles2-mesa-dev, libgles2-mesa
 Maintainer: mk01 <development@xbian.org>
