@@ -1,10 +1,10 @@
 .DS_Store
 md5sums
-content*
-build/*/working/*
+content/*
+build/config_pkgver
+build/*/working*
 build.*
 *.deb
 ._*
 src_repo_hash_HEAD
 config_aptdir
-build/rpi/content-tpl/*
