@@ -1,4 +1,4 @@
 rpi stable main
 #rpi2 stable rpi2-${config_os_version}
 
-rpi2-next devel rpi2-${config_os_version}
+#rpi2-next devel rpi2-${config_os_version}
