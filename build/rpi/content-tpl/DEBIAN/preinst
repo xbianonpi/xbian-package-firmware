@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#detect chroot
+if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/. 2>/dev/null)" ]; then
+  exit 0
+fi
+
+mountpoint -q /boot || { mount /boot || { echo "CAN'T MOUNT BOOT"; exit 1; }; }
+
+if [ $1 == "install" -o $1 == "upgrade" ]; then
+
+    :
+
+fi
