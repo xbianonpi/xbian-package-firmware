@@ -7,10 +7,10 @@ case $config_platform_branch in
         cp -a ./boot/bootcode.bin ../../../content/boot.new/
         cp -a ./boot/COPYING.linux ../../../content/boot.new/
         cp -a ./boot/fixup_x.dat ../../../content/boot.new/fixup.dat
-        cp -a ./boot/fixup_db.dat ../../../content/boot.new/
+        cp -a ./boot/fixup_db.dat ../../../content/boot.new/ 2>/dev/null || :
         cp -a ./boot/LICENCE.broadcom ../../../content/boot.new/
         cp -a ./boot/start_x.elf ../../../content/boot.new/start.elf
-        cp -a ./boot/start_db.elf ../../../content/boot.new/
+        cp -a ./boot/start_db.elf ../../../content/boot.new/ 2>/dev/null || :
         mkdir -p ../../../content/boot.new/overlays
         cp -a ./boot/overlays/README ../../../content/boot.new/overlays/
 
