@@ -1,6 +1,8 @@
 
 case $config_platform_branch in
-    rpi*)
+    rpi*|arm64)
+        rm -rf ../../../content/usr/ ../../../content/opt/
+
         # Copy for /boot   
         [ -e ../../../content/boot.new/ ] && rm -rf ../../../content/boot.new/
         mkdir -p ../../../content/boot.new/
@@ -23,34 +25,41 @@ case $config_platform_branch in
         cp -a ./boot/COPYING.linux ../../../content/var/tmp/
         cp -a ./boot/LICENCE.broadcom ../../../content/var/tmp/
 
-        # Copy for /opt/vc
-        rm -rf ../../../content/opt/ && mkdir -p ../../../content/opt/
-        cp -a ./hardfp/opt/vc/ ../../../content/opt/
-        rm -rf ../../../content/opt/vc/src
+        if [ "$config_deb_arch" = 'arm64' ]; then
+                eval $config_build_env apt-get download libraspberrypi-bin:arm64 libraspberrypi-dev:arm64 libraspberrypi0:arm64
+                dpkg -x libraspberrypi-bin*.deb ../../../content/
+                dpkg -x libraspberrypi-dev*.deb ../../../content/
+                dpkg -x libraspberrypi0*.deb ../../../content/
+                rm -f libraspberrypi-bin*.deb libraspberrypi-dev*.deb libraspberrypi0*.deb
+        else
+                # Copy for /opt/vc
+                mkdir -p ../../../content/opt/
+                cp -a ./hardfp/opt/vc/ ../../../content/opt/
+                rm -rf ../../../content/opt/vc/src
 
-        rm -rf ../../../content/usr/
-        mkdir -p ../../../content/usr/{bin,include,lib,share}
-        mkdir -p ../../../content/usr/lib/arm-linux-gnueabihf/pkgconfig
+                mkdir -p ../../../content/usr/{bin,include,lib,share}
+                mkdir -p ../../../content/usr/lib/arm-linux-gnueabihf/pkgconfig
 
-        LIBS="libbcm_host.so libcontainers.so libdebug_sym.so libdtovl.so libmmal_components.so libmmal_core.so \
-              libmmal.so libmmal_util.so libmmal_vc_client.so libvchiq_arm.so libvcos.so libvcsm.so"
-        PKGS="bcm_host.pc mmal.pc vcsm.pc"
-        INCS="bcm_host.h interface vcinclude"
-        BINS="dtmerge dtoverlay dtoverlay-post dtoverlay-pre dtparam mmal_vc_diag raspistill raspivid raspividyuv \
-              raspiyuv tvservice vcgencmd vchiq_test vcmailbox"
+                LIBS="libbcm_host.so libcontainers.so libdebug_sym.so libdtovl.so libmmal_components.so libmmal_core.so \
+                      libmmal.so libmmal_util.so libmmal_vc_client.so libvchiq_arm.so libvcos.so libvcsm.so"
+                PKGS="bcm_host.pc mmal.pc vcsm.pc"
+                INCS="bcm_host.h interface vcinclude"
+                BINS="dtmerge dtoverlay dtoverlay-post dtoverlay-pre dtparam mmal_vc_diag raspistill raspivid raspividyuv \
+                      raspiyuv tvservice vcgencmd vchiq_test vcmailbox"
 
-        # libraspberrypi0 part
-        for lib in $LIBS; do mv ../../../content/opt/vc/lib/$lib ../../../content/usr/lib/arm-linux-gnueabihf/$lib.0; done
+                # libraspberrypi0 part
+                for lib in $LIBS; do mv ../../../content/opt/vc/lib/$lib ../../../content/usr/lib/arm-linux-gnueabihf/$lib.0; done
 
-        # libraspberrypi-dev part
-        mv ../../../content/opt/vc/lib/{libdebug_sym_static.a,libvchostif.a} ../../../content/usr/lib/arm-linux-gnueabihf/
-        for lib in $LIBS; do ( cd ../../../content/usr/lib/arm-linux-gnueabihf; ln -s $lib.0 $lib ); done
-        for pkg in $PKGS; do mv ../../../content/opt/vc/lib/pkgconfig/$pkg ../../../content/usr/lib/arm-linux-gnueabihf/pkgconfig; done
-        for inc in $INCS; do mv ../../../content/opt/vc/include/$inc ../../../content/usr/include; done
+                # libraspberrypi-dev part
+                mv ../../../content/opt/vc/lib/{libdebug_sym_static.a,libvchostif.a} ../../../content/usr/lib/arm-linux-gnueabihf/
+                for lib in $LIBS; do ( cd ../../../content/usr/lib/arm-linux-gnueabihf; ln -s $lib.0 $lib ); done
+                for pkg in $PKGS; do mv ../../../content/opt/vc/lib/pkgconfig/$pkg ../../../content/usr/lib/arm-linux-gnueabihf/pkgconfig; done
+                for inc in $INCS; do mv ../../../content/opt/vc/include/$inc ../../../content/usr/include; done
 
-        # libraspberrypi-bin part
-        for bin in $BINS; do mv ../../../content/opt/vc/bin/$bin ../../../content/usr/bin/$bin; done
-        mv ../../../content/opt/vc/man ../../../content/usr/share
+                # libraspberrypi-bin part
+                for bin in $BINS; do mv ../../../content/opt/vc/bin/$bin ../../../content/usr/bin/$bin; done
+                mv ../../../content/opt/vc/man ../../../content/usr/share
+        fi
     ;;
 
     imx6)

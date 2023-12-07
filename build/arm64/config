@@ -1,0 +1,5 @@
+config_build_env=schroot -c armhf${config_os_version}v6 -p --
+config_source_type_extra=--single-branch --depth=1
+config_source_addr=https://github.com/raspberrypi/firmware
+config_deb_pkgname=xbian-package-firmware
+config_deb_arch=arm64
